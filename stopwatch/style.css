@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    background: #010322;
+    flex-direction: column;
+}
+
+.stop {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    height: 320px;
+    width: 320px;
+    box-shadow: 5px 5px 15px #0008;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    background: #01041b;
+    flex-direction: column;
+    font-weight: bolder;
+    font-size: 3vw;
+    overflow: hidden;
+    z-index: 2;
+}
+#stopwatch{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    box-shadow: 5px 5px 15px #0008;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    background: #01041b;
+    flex-direction: column;
+    font-weight: bolder;
+    font-size: 3vw;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.stop::before,
+.stop::after {
+    content:"";
+    position: absolute;
+    height:50%;
+    width: 150%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.stop::before {
+    background: conic-gradient( rgb(255, 162, 178) 50deg,transparent 120deg);
+    animation: rotate 15s infinite linear;
+}
+@keyframes rotate {
+    100% {
+        transform: translate(-50%, -50%);
+        rotate: 360deg;
+    }
+}
+
+#buttons {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.laps {
+    list-style: none;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+}
+
+button {
+    padding: 20px;
+    border-radius: 100px;
+    font-size: 15px;
+    margin: 20px;
+    width: 150px;
+    transition: all 0.2s;
+    background: #020223;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 147, 165);
+    color: black;
+    font-weight: bolder;
+}
+
+button:active {
+    box-shadow: none;
+    transition: all 0.5;
+}
